@@ -29,7 +29,7 @@ Open in your browser:
 ## Endpoints
 
 - `POST /register` - create a new user
-- `POST /login` - login and receive a bearer token
+- `POST /login` - login and receive a token
 - `POST /transactions` - submit a transaction and evaluate fraud risk
 - `POST /credit` - get credit recommendation
 - `GET /dashboard` - view user summary and alerts
@@ -39,5 +39,5 @@ Open in your browser:
 
 1. Register a user.
 2. Login to get the token.
-3. Send transactions with the token in the `Authorization` header.
+3. Use the token value only when authenticating (no extra header or prefix).
 4. Query `/dashboard` and `/alerts`.

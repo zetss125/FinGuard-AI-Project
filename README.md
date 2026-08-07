@@ -13,7 +13,7 @@ The backend is implemented with FastAPI and uses SQLite for data persistence. Fr
 - Uvicorn
 - SQLite
 - Pydantic
-- HTTP Bearer authentication
+- Token authentication
 - python-docx (for generating documentation)
 
 ## Setup Instructions
@@ -72,18 +72,14 @@ Open Swagger UI in your browser:
 - Response contains a token:
   ```json
   {
-    "token": "<bearer-token>",
+    "token": "<token>",
     "message": "Login successful."
   }
   ```
 
 ### Protected endpoints
 
-For the following endpoints, include the header:
-
-```
-Authorization: Bearer <token>
-```
+For the following endpoints, use the token value only. Paste the token itself (for example, `6171f19093e248d6b4fc1f7c6110a049`) without adding any header or prefix text.
 
 ### Submit a transaction
 
@@ -118,8 +114,8 @@ Authorization: Bearer <token>
 
 ## Notes
 
-- Use Swagger’s `Authorize` button to enter your token in the form `Bearer <token>`.
-- If you receive `422` on a protected endpoint, the token header is missing or malformed.
+- Use Swagger’s `Authorize` button and paste only the token value.
+- If you receive `401` or `422` on a protected endpoint, the token is missing, expired, or was entered incorrectly.
 
 ## Testing
 
