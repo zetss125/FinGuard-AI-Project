@@ -1,0 +1,16 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+
+# SQLite database files
+*.db
+
+# Temporary and generated scripts
+generate_report.py
+
+# VS Code / editor files
+.vscode/
+
+# Log files
+*.log
